@@ -1,0 +1,13 @@
+prefix=c:/Users/aravi/OneDrive/Desktop/Launchcode/data-analysis-projects/.conda/Library
+exec_prefix=c:/Users/aravi/OneDrive/Desktop/Launchcode/data-analysis-projects/.conda/Library
+libdir=c:/Users/aravi/OneDrive/Desktop/Launchcode/data-analysis-projects/.conda/Library/lib
+sharedlibdir=c:/Users/aravi/OneDrive/Desktop/Launchcode/data-analysis-projects/.conda/Library/lib
+includedir=c:/Users/aravi/OneDrive/Desktop/Launchcode/data-analysis-projects/.conda/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.3.1
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
