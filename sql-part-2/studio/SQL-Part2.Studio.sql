@@ -1,5 +1,6 @@
 -- --QUESTION 1:
-SELECT MAX(LEN(title)) FROM BookSDB.dbo.books
+SELECT MAX(LEN(title)) 
+FROM BookSDB.dbo.books
 
 --ANSWER: 186
 
