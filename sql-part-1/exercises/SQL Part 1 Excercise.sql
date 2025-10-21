@@ -1,16 +1,16 @@
 -- A. The Books TABLE
 -- Question 1:
-SELECT TOP 1000 * FROM Books;
+SELECT TOP 1000 * FROM BooksDB.dbo.books;
 --Question 2:
-Select COUNT(title) FROM Books;
+Select COUNT(title) FROM BooksDB.dbo.books;
 --Question 3:
-SELECT COUNT(*)  FROM Books WHERE original_publication_year < 1800;
+SELECT COUNT(*)  FROM BooksDB.dbo.books WHERE original_publication_year < 1800;
 --Question 4:
-SELECT DISTINCT authors FROM Books;
+SELECT DISTINCT authors FROM BooksDB.dbo.books;
 --Question 5:
-SELECT COUNT(*) FROM Books WHERE language_code LIKE 'eng%' or language_code LIKE 'en-%';
+SELECT COUNT(*) FROM BooksDB.dbo.books WHERE language_code LIKE 'eng%' or language_code LIKE 'en-%';
 --Question 6:
-SELECT COUNT(*) FROM Books WHERE original_publication_year BETWEEN 1914 AND 1921;
+SELECT COUNT(*) FROM BooksDB.dbo.books WHERE original_publication_year BETWEEN 1914 AND 1921;
 
 
 --B. The Book Tags Table
