@@ -4,7 +4,7 @@ book_id,
 authors,
 title,
 average_rating As 'Rating average'
-FROM books
+FROM BooksDB.dbo.books
 ORDER BY average_rating DESC;
 -- ANSWER: The number one book is "Harry Potter Boxed Set, Books 1-5 (Harry Potter, #1-5)"
 
@@ -14,13 +14,13 @@ book_id,
 authors,
 title,
 average_rating As 'Rating average'
-FROM books
+FROM BooksDB.dbo.books
 ORDER BY average_rating ;
 -- ANSWER: "One Night at the Call Center" is the least popular book.
 
 --QUESTION 3:
 SELECT TOP 1 tag_id
-FROM book_tags
+FROM BooksDB.dbo.book_tags
 GROUP BY tag_id
 ORDER BY COUNT(*) DESC;
 -- ANSWER: 30574 is the most popular tag
@@ -40,7 +40,7 @@ WHERE original_publication_year BETWEEN 2000 AND 2009;
 
 --Question 6:
 SELECT COUNT(*) AS BooksWithHappy
-FROM Books
+FROM BooksDB.dbo.books
 WHERE title LIKE '%happy%';
 -- ANSWER: 13 books that contain the word, "happy"
 
@@ -50,10 +50,10 @@ SELECT
     authors,
     title,
     average_rating
-FROM Books
+FROM BooksDB.dbo.books
 WHERE authors IN (
     SELECT TOP 3 authors
-    FROM Books
+    FROM BooksDB.dbo.books
     GROUP BY authors
     ORDER BY AVG(average_rating) DESC
 )
@@ -65,19 +65,21 @@ ORDER BY authors ASC, average_rating DESC;
 
 --Question 8:
 SELECT COUNT(DISTINCT authors) 
-FROM books WHERE authors BETWEEN 'rock' AND 'roll'
+FROM BooksDB.dbo.books 
+WHERE authors BETWEEN 'rock' AND 'roll'
 -- ANSWER: 16
 
 
 --Part 2: Find the Answers to Your Own Questions
 --Question 1:
-SELECT TOP 1 title, LEN(title) AS TitleLength FROM books
+SELECT TOP 1 title, LEN(title) AS TitleLength 
+FROM BooksDB.dbo.books
 ORDER BY TitleLength DESC;
 -- ANSWER: Soccernomics: Why England Loses, Why Germany and Brazil Win, and Why the U.S., Japan, Australia, Turkey--and Even Iraq--Are Destined to Become the Kings of the World's Most Popular Sport	186
 
 --QUESTION 2:
 SELECT TOP 1 authors, COUNT(book_id) AS totalbooks
-FROM books 
+FROM BooksDB.dbo.books 
 GROUP BY authors
 ORDER BY totalbooks DESC;
 --ANSWER: Stephen King	60
@@ -88,7 +90,7 @@ title,
  authors,
     original_publication_year,
     average_rating
-FROM books
+FROM BooksDB.dbo.books
 WHERE original_publication_year = 1994
 ORDER BY average_rating DESC;
 --ANSWER: Homicidal Psycho Jungle Cat: A Calvin and Hobbes Collection	Bill Watterson	1994	4.71
